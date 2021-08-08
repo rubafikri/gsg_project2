@@ -6,6 +6,7 @@ import 'package:flutter_gsg_project2/screens/Home/homeScreen.dart';
 import 'package:flutter_gsg_project2/widgets/textformfield.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:uuid/uuid.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddHerb extends StatefulWidget {
   @override
@@ -61,10 +62,13 @@ class _AddHerbState extends State<AddHerb> {
               alignment: Alignment.center,
               child: ElevatedButton.icon(
                 icon: Icon(Icons.add),
-                label: Text('ADD NEW '),
+                label: Text(
+                  'ADD NEW ',
+                  style: TextStyle(fontSize: 20.sp),
+                ),
                 style: ElevatedButton.styleFrom(
                   primary: HexColor('#C2DEAE'),
-                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 5.w),
                 ),
                 onPressed: () {
                   if (form.currentState.validate()) {
@@ -73,7 +77,7 @@ class _AddHerbState extends State<AddHerb> {
                     String ingre = ingrdiatecontroller.text;
                     String short = shortDesccontroller.text;
                     String pre = prprationcontroller.text;
-                    DbHelper.dbHelper.insertNewTask(Herb(
+                    DbHelper.dbHelper.insertHerb(Herb(
                         name: name,
                         ingrediants: ingre,
                         shortDiscription: short,

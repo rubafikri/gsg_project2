@@ -4,6 +4,7 @@ import 'package:flutter_gsg_project2/models/herb.dart';
 import 'package:flutter_gsg_project2/screens/addHerb/addHerbScreen.dart';
 import 'package:flutter_gsg_project2/screens/viewFav/viewFavScreen.dart';
 import 'package:flutter_gsg_project2/widgets/herbItelist.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hexcolor/hexcolor.dart';
 
@@ -57,13 +58,13 @@ class _HomeState extends State<Home> {
           ],
           leading: IconButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('addHerb');
+                Navigator.of(context).pushNamed('login');
                 herbs.forEach((element) {
                   print(element.name);
                 });
                 print(herbs.toList());
               },
-              icon: Icon(Icons.add)),
+              icon: Icon(Icons.logout_outlined)),
         ),
         body: Container(
             decoration: BoxDecoration(
@@ -80,6 +81,14 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       return HerbItemList(herbs[index], updateTask, removeHerb);
                     })),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: HexColor('#6E8F60'),
+          onPressed: () {
+            Navigator.of(context).pushNamed('addHerb');
+          },
+          tooltip: 'Add',
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }

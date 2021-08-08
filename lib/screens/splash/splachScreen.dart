@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gsg_project2/helpers/shardrdHelper.dart';
 
 import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -15,10 +16,10 @@ class SplashScreen extends StatelessWidget {
     });
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(top: 20),
+        padding: EdgeInsets.only(top: 20.w),
         child: Center(
           child: Container(
-              width: 1000,
+              width: 1000.sw,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/photo.png'),
@@ -33,7 +34,7 @@ class SplashScreen extends StatelessWidget {
                         'welcome to',
                         style: TextStyle(
                           color: HexColor('#6E8F60'),
-                          fontSize: 20,
+                          fontSize: 20.sp,
                         ),
                       ),
                     ),
@@ -44,7 +45,7 @@ class SplashScreen extends StatelessWidget {
                         'THE HUB FOR ALL YOUR SPICES',
                         style: TextStyle(
                           color: HexColor('#6E8F60'),
-                          fontSize: 15,
+                          fontSize: 15.sp,
                         ),
                       ),
                     ),

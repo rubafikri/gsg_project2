@@ -6,6 +6,7 @@ import 'package:flutter_gsg_project2/screens/Home/homeScreen.dart';
 import 'package:flutter_gsg_project2/screens/register/registerScreen.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:string_validator/string_validator.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -29,8 +30,8 @@ class _LoginState extends State<Login> {
             padding: EdgeInsets.only(top: 40),
             child: Center(
               child: Container(
-                width: 132,
-                height: 132,
+                width: 132.w,
+                height: 132.h,
                 decoration: BoxDecoration(shape: BoxShape.circle),
                 child: Image(image: AssetImage('assets/images/logo.png')),
               ),
@@ -42,7 +43,7 @@ class _LoginState extends State<Login> {
               'Login',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 27,
+                  fontSize: 27.sp,
                   color: HexColor('#068F6E'),
                   fontWeight: FontWeight.bold),
             ),
@@ -53,13 +54,13 @@ class _LoginState extends State<Login> {
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.left,
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Colors.black,
                   fontWeight: FontWeight.normal),
               controller: emailcontroller,
               decoration: InputDecoration(
                 hintStyle: TextStyle(
-                    fontSize: 17,
+                    fontSize: 17.sp,
                     color: Colors.grey[600],
                     fontWeight: FontWeight.bold),
                 border:
@@ -74,7 +75,7 @@ class _LoginState extends State<Login> {
               obscureText: visiblbool,
               textAlign: TextAlign.left,
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Colors.black,
                   fontWeight: FontWeight.normal),
               controller: passwordcontroller,
@@ -89,7 +90,7 @@ class _LoginState extends State<Login> {
                       });
                     }),
                 hintStyle: TextStyle(
-                    fontSize: 17,
+                    fontSize: 17.sp,
                     color: Colors.grey[600],
                     fontWeight: FontWeight.bold),
                 hintText: 'Password',
@@ -97,18 +98,6 @@ class _LoginState extends State<Login> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               ),
             ),
-          ),
-          Container(
-            alignment: Alignment.bottomRight,
-            margin: EdgeInsets.only(right: 10),
-            child: TextButton(
-                onPressed: () async {},
-                child: Text(
-                  'Forget Password',
-                  style: TextStyle(
-                    color: HexColor('#068F6E'),
-                  ),
-                )),
           ),
           Padding(
             padding: EdgeInsets.only(top: 20, bottom: 30),
@@ -144,18 +133,11 @@ class _LoginState extends State<Login> {
                     SpHelper.spHelper.setIsLogged();
 
                     Navigator.of(context).pushReplacementNamed('home');
-                    {
-                      CoolAlert.show(
-                        context: context,
-                        type: CoolAlertType.error,
-                        text: 'You Have to verfied',
-                      );
-                    }
                   }
                 },
                 child: Container(
-                  width: 161,
-                  height: 42,
+                  width: 161.w,
+                  height: 42.h,
                   decoration: BoxDecoration(
                       border: Border.all(color: HexColor('#068F6E'), width: 2),
                       borderRadius: BorderRadius.circular(10)),
@@ -163,7 +145,7 @@ class _LoginState extends State<Login> {
                     child: Text(
                       'Login',
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.bold,
                           color: HexColor('#068F6E')),
                     ),
@@ -179,6 +161,7 @@ class _LoginState extends State<Login> {
               child: Text(
                 'Do not Have an account! Register NOW',
                 style: TextStyle(
+                  fontSize: 15.sp,
                   color: HexColor('#068F6E'),
                 ),
               )),

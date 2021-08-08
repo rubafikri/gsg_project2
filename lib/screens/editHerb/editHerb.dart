@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gsg_project2/helpers/databaseHelper.dart';
 import 'package:flutter_gsg_project2/models/herb.dart';
-import 'package:flutter_gsg_project2/screens/Home/homeScreen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hexcolor/hexcolor.dart';
 
@@ -43,7 +43,7 @@ class _EditHerbState extends State<EditHerb> {
               maxLines: 1,
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 15.sp,
                 color: Colors.black,
               ),
               decoration: InputDecoration(
@@ -65,7 +65,7 @@ class _EditHerbState extends State<EditHerb> {
               maxLines: 2,
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 15.sp,
                 color: Colors.black,
               ),
               decoration: InputDecoration(
@@ -87,7 +87,7 @@ class _EditHerbState extends State<EditHerb> {
               maxLines: 5,
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 15.sp,
                 color: Colors.black,
               ),
               decoration: InputDecoration(
@@ -109,7 +109,7 @@ class _EditHerbState extends State<EditHerb> {
               maxLines: 6,
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 15.sp,
                 color: Colors.black,
               ),
               decoration: InputDecoration(
@@ -129,10 +129,13 @@ class _EditHerbState extends State<EditHerb> {
             alignment: Alignment.center,
             child: ElevatedButton.icon(
               icon: Icon(Icons.edit),
-              label: Text('EDIT '),
+              label: Text(
+                'EDIT ',
+                style: TextStyle(fontSize: 20.sp),
+              ),
               style: ElevatedButton.styleFrom(
                 primary: HexColor('#C2DEAE'),
-                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 60.w, vertical: 10.w),
               ),
               onPressed: () {
                 print(widget.herb.toMap());

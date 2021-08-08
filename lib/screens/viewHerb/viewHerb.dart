@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gsg_project2/models/herb.dart';
 import 'package:flutter_gsg_project2/screens/Home/homeScreen.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class HerbView extends StatefulWidget {
@@ -46,98 +46,91 @@ class _HerbViewState extends State<HerbView> {
                   ),
                   Container(
                     padding: EdgeInsets.only(
-                      top: 15,
+                      top: 15.w,
                     ),
                     child: Text(
                       widget.herb.name,
                       style: TextStyle(
                           color: HexColor('#A0C391'),
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.only(
-                      top: 20,
+                      top: 20.w,
                     ),
                     child: Text(
                       'INGREDIENTS',
                       style: TextStyle(
                           color: HexColor('#A0C391'),
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.normal),
                     ),
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.only(
-                      top: 20,
-                      left: 38,
+                      top: 20.w,
+                      left: 38.w,
                     ),
                     child: Text(
                       widget.herb.ingrediants,
                       style: TextStyle(
                           color: HexColor('#6C7B6B'),
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.normal),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.only(
-                      top: 20,
+                      top: 20.w,
                     ),
                     child: Text(
                       'PREPARATION',
                       style: TextStyle(
                           color: HexColor('#A0C391'),
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.normal),
                     ),
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.only(
-                      top: 20,
-                      left: 38,
-                      bottom: 20,
+                      top: 20.w,
+                      left: 38.w,
+                      bottom: 20.w,
                     ),
                     child: Text(
                       widget.herb.prepation,
                       style: TextStyle(
                           color: HexColor('#6C7B6B'),
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.normal),
                     ),
                   ),
                   Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.only(
-                      top: 60,
+                      top: 60.w,
                     ),
                     child: ElevatedButton.icon(
                       icon: Icon(
                         Icons.favorite,
                         color: widget.herb.isFav ? Colors.red : Colors.white,
                       ),
-                      label: Text('ADD TO FAVORITES '),
+                      label: Text(
+                        'ADD TO FAVORITES ',
+                        style: TextStyle(fontSize: 20.sp),
+                      ),
                       style: ElevatedButton.styleFrom(
                         primary: HexColor('#A0C391'),
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       ),
-                      onPressed: () async {
+                      onPressed: () {
                         setState(() {});
                         widget.herb.isFav = true;
-                        // await FirstoreHelper.firstoreHelper.editProduct(
-                        //     Herb(
-                        //         name: widget.herb.name,
-                        //         ingrediants: this.widget.herb.ingrediants,
-                        //         shortDiscription:
-                        //             this.widget.herb.shortDiscription,
-                        //         prepation: this.widget.herb.prepation,
-                        //         id: this.widget.herb.id,
-                        //         isFav: this.widget.herb.isFav),
-                        //     widget.herb.id);
                       },
                     ),
                   ),

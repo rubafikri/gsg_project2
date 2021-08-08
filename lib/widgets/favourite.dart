@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gsg_project2/models/herb.dart';
 import 'package:flutter_gsg_project2/screens/favHerbView/favHerbViewScreen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:hexcolor/hexcolor.dart';
 
@@ -20,7 +21,7 @@ class Favourite extends StatelessWidget {
             ListTile(
               title: ListTile(
                 title: Container(
-                    padding: EdgeInsets.only(bottom: 10, top: 10),
+                    padding: EdgeInsets.only(bottom: 10.w, top: 10.w),
                     alignment: Alignment.center,
                     child: Text(herb.name)),
                 subtitle: Container(
@@ -46,7 +47,7 @@ class Favourite extends StatelessWidget {
                       },
                       child: Text(
                         'view',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, fontSize: 20.sp),
                       )),
                 ],
               ),

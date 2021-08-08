@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TextFormStyle extends StatelessWidget {
   String hintText;
@@ -10,19 +11,19 @@ class TextFormStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10, right: 10, bottom: 15),
+      padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 15.w),
       child: TextFormField(
         initialValue: init,
         maxLines: lines,
         textAlign: TextAlign.left,
         style: TextStyle(
-          fontSize: 20,
+          fontSize: 20.sp,
           color: Colors.black,
         ),
         controller: editingController,
         decoration: InputDecoration(
           hintStyle: TextStyle(
-            fontSize: 17,
+            fontSize: 17.sp,
             color: HexColor('#6E8F60'),
           ),
           border: OutlineInputBorder(

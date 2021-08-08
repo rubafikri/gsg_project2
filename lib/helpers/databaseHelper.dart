@@ -44,7 +44,7 @@ class DbHelper {
     return database;
   }
 
-  insertNewTask(Herb herb) async {
+  insertHerb(Herb herb) async {
     Map map = {
       'name': herb.name,
       'ingrediants': herb.ingrediants,
@@ -56,11 +56,6 @@ class DbHelper {
 
     int rowNum = await datadbse.insert(herbTableName, {...herb.toMap()});
 
-    print(rowNum);
-  }
-
-  insertHerb(Herb herb) async {
-    int rowNum = await datadbse.insert(herbTableName, herb.toMap());
     print(rowNum);
   }
 
@@ -83,17 +78,10 @@ class DbHelper {
     datadbse.delete(herbTableName, where: 'id=?', whereArgs: [id]);
   }
 
-  updateTask(Herb taskModel) async {
-    datadbse.update(herbTableName, {...taskModel.toMap()},
-        where: 'id=?', whereArgs: [taskModel.id]);
+  updateTask(Herb herb) async {
+    datadbse.update(herbTableName, {...herb.toMap()},
+        where: 'id=?', whereArgs: [herb.id]);
   }
-
-  // updateHerb(Herb herb) async {
-  //   herb.isFav = !herb.isFav;
-  //   int UpdateTask = await datadbse.update(herbTableName, herb.toMap(),
-  //       where: 'id=?', whereArgs: [herb.id]);
-  //   print(UpdateTask);
-  // }
 
   getTablesNames() async {
     List<Map<String, Object>> tables = await datadbse

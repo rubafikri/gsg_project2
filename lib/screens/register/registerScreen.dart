@@ -4,6 +4,7 @@ import 'package:flutter_gsg_project2/helpers/shardrdHelper.dart';
 import 'package:flutter_gsg_project2/screens/Home/homeScreen.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:string_validator/string_validator.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -27,8 +28,8 @@ class _SignUpState extends State<SignUp> {
             padding: EdgeInsets.only(top: 40),
             child: Center(
               child: Container(
-                width: 132,
-                height: 132,
+                width: 132.sw,
+                height: 132.h,
                 decoration: BoxDecoration(shape: BoxShape.circle),
                 child: Image(image: AssetImage('assets/images/logo.png')),
               ),
@@ -40,7 +41,7 @@ class _SignUpState extends State<SignUp> {
               'Rigester',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 27,
+                  fontSize: 27.sp,
                   color: HexColor('#068F6E'),
                   fontWeight: FontWeight.bold),
             ),
@@ -51,13 +52,13 @@ class _SignUpState extends State<SignUp> {
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.left,
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Colors.black,
                   fontWeight: FontWeight.normal),
               controller: emailcontroller,
               decoration: InputDecoration(
                 hintStyle: TextStyle(
-                    fontSize: 17,
+                    fontSize: 17.sp,
                     color: Colors.grey[600],
                     fontWeight: FontWeight.bold),
                 border:
@@ -72,7 +73,7 @@ class _SignUpState extends State<SignUp> {
               obscureText: visiblbool,
               textAlign: TextAlign.left,
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 20.sp,
                   color: Colors.black,
                   fontWeight: FontWeight.normal),
               controller: passwordcontroller,
@@ -87,7 +88,7 @@ class _SignUpState extends State<SignUp> {
                       });
                     }),
                 hintStyle: TextStyle(
-                    fontSize: 17,
+                    fontSize: 17.sp,
                     color: Colors.grey[600],
                     fontWeight: FontWeight.bold),
                 hintText: 'Password',
@@ -97,7 +98,7 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 20),
+            padding: EdgeInsets.only(top: 20.w),
             child: Center(
               child: InkWell(
                 onTap: () {
@@ -133,8 +134,8 @@ class _SignUpState extends State<SignUp> {
                   }
                 },
                 child: Container(
-                  width: 161,
-                  height: 42,
+                  width: 161.w,
+                  height: 42.h,
                   decoration: BoxDecoration(
                       border: Border.all(color: HexColor('#068F6E'), width: 2),
                       borderRadius: BorderRadius.circular(10)),
@@ -142,7 +143,7 @@ class _SignUpState extends State<SignUp> {
                     child: Text(
                       'Register',
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.bold,
                           color: HexColor('#068F6E')),
                     ),
